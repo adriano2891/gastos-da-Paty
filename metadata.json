@@ -1,5 +1,12 @@
 {
   "name": "Gastos da Paty - Gestor de Orçamento",
   "description": "Um aplicativo financeiro minimalista para controle de gastos mensais, com acompanhamento de saldo em tempo real, tabelas consolidadas e insights inteligentes.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "nativePermissions": [
+    "push-notifications",
+    "biometrics"
+  ]
 }

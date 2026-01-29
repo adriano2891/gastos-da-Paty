@@ -39,6 +39,11 @@ const App: React.FC = () => {
   
   const yearSelectorRef = useRef<HTMLDivElement>(null);
 
+  // Detecção simples de plataforma para ajustes de UI (ex: margem do topo no iOS)
+  const isNative = useMemo(() => {
+    return window.hasOwnProperty('Capacitor');
+  }, []);
+
   const formatAsCurrency = (value: number): string => {
     return new Intl.NumberFormat('pt-BR', {
       minimumFractionDigits: 2,
@@ -93,7 +98,6 @@ const App: React.FC = () => {
     return consolidateExpenses(currentExpenses);
   }, [currentExpenses]);
 
-  // Derive unique descriptions for suggestions
   const suggestionList = useMemo(() => {
     const descriptions = allExpenses.map(e => e.description);
     return Array.from(new Set(descriptions)).sort();
@@ -156,7 +160,7 @@ const App: React.FC = () => {
   const yearsList = getAvailableYears();
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-20">
+    <div className={`min-h-screen bg-slate-50 pb-20 ${isNative ? 'select-none' : ''}`}>
       <header className="bg-indigo-600 text-white pt-6 pb-2 px-4 shadow-md sticky top-0 z-30">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-6">

@@ -1,22 +1,23 @@
+
 {
-  "name": "gastos-da-paty---gestor-de-orçamento",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "gastos-da-paty",
+  "version": "1.0.0",
+  "description": "Gestor de Orçamento - App Nativo",
+  "main": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "npx serve .",
+    "cap-sync": "npx cap sync",
+    "cap-add-android": "npx cap add android",
+    "cap-open-android": "npx cap open android"
   },
   "dependencies": {
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "@google/genai": "^1.38.0"
+    "@google/genai": "^1.38.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/android": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "@capacitor/cli": "^6.0.0"
   }
 }

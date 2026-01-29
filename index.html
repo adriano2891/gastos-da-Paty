@@ -3,16 +3,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="manifest" href="manifest.json">
     <title>Gastos da Paty - Gestor de Orçamento</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --safe-area-inset-top: env(safe-area-inset-top);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            overscroll-behavior-y: none;
+            padding-top: var(--safe-area-inset-top);
+            padding-bottom: var(--safe-area-inset-bottom);
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
         
         @keyframes shake {
@@ -25,9 +37,12 @@
             animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) infinite;
         }
 
-        /* Suaviza a transição de cores e tremor */
-        .transition-all-custom {
-            transition: all 0.3s ease-in-out;
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 <script type="importmap">

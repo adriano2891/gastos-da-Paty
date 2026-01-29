@@ -1,0 +1,11 @@
+
+{
+  "appId": "com.paty.moneyflow",
+  "appName": "Gastos da Paty",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  }
+}
